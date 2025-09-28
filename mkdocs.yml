@@ -1,0 +1,12 @@
+site_name: My Docs
+
+theme:
+  name: material
+
+nav:
+  - index.md
+  - references.md
+  - tutorials.md
+  - explanation.md
+
+
