@@ -1,17 +1,27 @@
-# Welcome to MkDocs
+theme:
+  name: readthedocs
+theme:
+  name: material
+  palette:
+    primary: red
+    accent: amber
+  font:
+    text: Roboto
+    code: Fira Code
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
 
-## Commands
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Este es un ejemplo en línea: $E = mc^2$.
 
-## Project layout
+Y una ecuación en bloque:
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+$$
+\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+$$
+
