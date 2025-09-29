@@ -20,7 +20,7 @@
     
     
       
-        <title>Tutorials - My Docs</title>
+        <title>Tutorials - Gaussian Cuadratures</title>
       
     
     
@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#function-to-compute-gausslegendre-nodes-and-weights" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -73,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href=".." title="Gaussian Cuadratures" class="md-header__button md-logo" aria-label="Gaussian Cuadratures" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -87,7 +92,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            My Docs
+            Gaussian Cuadratures
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -171,13 +176,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href=".." title="Gaussian Cuadratures" class="md-nav__button md-logo" aria-label="Gaussian Cuadratures" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    My Docs
+    Gaussian Cuadratures
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -239,6 +244,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -295,6 +302,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -310,9 +319,28 @@
 
 
 
-  <h1>Tutorials</h1>
-
-
+<p>In this example we compute
+$$
+I=\int_{1}^{3}(x^6 - x^2\sin(2x))dx
+$$
+using Gaussian quadrature with Legendre polynomials.</p>
+<p>```python
+import numpy as np</p>
+<h1 id="function-to-compute-gausslegendre-nodes-and-weights">Function to compute Gauss–Legendre nodes and weights</h1>
+<p>def gaussxw(N):
+    x, w = np.polynomial.legendre.leggauss(N)
+    return x, w</p>
+<h1 id="function-to-scale-nodes-and-weights">Function to scale nodes and weights</h1>
+<p>def gaussxwab(a, b, x, w):
+    return 0.5<em>(b - a)</em>x + 0.5<em>(b + a), 0.5</em>(b - a)*w</p>
+<h1 id="function-to-integrate">Function to integrate</h1>
+<p>def f(x):
+    return (x<strong>6) - (x</strong>2 * np.sin(2*x))</p>
+<h1 id="example-compute-with-n4">Example: compute with N=4</h1>
+<p>x4, w4 = gaussxw(4)
+x4Esc, w4Esc = gaussxwab(1.0, 3.0, x4, w4)
+I4 = np.sum(w4Esc * f(x4Esc))
+print("Result with N=4:", I4)</p>
 
 
 
