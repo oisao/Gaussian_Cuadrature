@@ -1,7 +1,7 @@
 Para resolver el problema planteado se va a aplicar el concepto de cuadratura Gaussiana para integración utilizando los polinomios de Legendre. La idea principal, la fórmula de la cuadratura Gaussiana está dada por: 
 
 $$
-\int{a}{b}f(x)dx \approx \sum_{k=1}^{N}w_kf(x_k)
+\int_{a}^{b}f(x)dx \approx \sum_{k=1}^{N}w_kf(x_k)
 $$
 donde $w_k$ son los pesos y x_k son los puntos de muestreo.
 
