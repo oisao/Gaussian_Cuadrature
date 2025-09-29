@@ -5,9 +5,9 @@ theme:
 
 nav:
   - index.md
-  - references.md
-  - tutorials.md
   - explanation.md
+  - tutorials.md
+  - reference.md
 
 markdown_extensions:
   - pymdownx.arithmatex:
