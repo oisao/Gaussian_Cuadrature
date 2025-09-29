@@ -1,8 +1,9 @@
-Este es un ejemplo en línea: $E = mc^2$.
+## Cuadratura Gaussiana
 
-Y una ecuación en bloque:
+El problema a resolver será resolver la siguiente integral:
+
 
 $$
-\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+I = \int{1}{3} [x^6 - x^2 \sin (2x)] dx
 $$
 

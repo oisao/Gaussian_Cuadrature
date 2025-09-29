@@ -10,8 +10,8 @@ nav:
   - explanation.md
 
 markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
+	  - pymdownx.arithmatex:
+	      generic: true
 
 extra_javascript:
   - javascripts/mathjax.js
