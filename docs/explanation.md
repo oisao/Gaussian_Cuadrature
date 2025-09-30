@@ -1,10 +1,10 @@
-Para resolver el problema planteado se va a aplicar el concepto de cuadratura Gaussiana para integración utilizando los polinomios de Legendre. La idea principal, la fórmula de la cuadratura Gaussiana está dada por: 
+To solve the stated problem, the concept of Gaussian quadrature will be applied for integration using Legendre polynomials. The main idea, the formula of Gaussian quadrature, is given by:
 
 $$
 \int_{a}^{b}f(x)dx \approx \sum_{k=1}^{N}w_kf(x_k)
 $$
-donde $w_k$ son los pesos y x_k son los puntos de muestreo.
+where $w_k$ are the weights and $x_k$ are the sampling points.
 
-En la cuadratura Gaussiana, los puntos de muestreo se escogen de manera no equidistantes. Esto introduce más grados de libetad para la misma discretización en $N$ subregiones. 
+In Gaussian quadrature, the sampling points are chosen in a non-equidistant manner. This introduces more degrees of freedom compared to the same discretization into $N$ subregions.
 
-Es exacta para un polinomio de orden $2N-1$. 
+It is exact for a polynomial of order $2N-1$. 

@@ -1,6 +1,6 @@
-## Cuadratura Gaussiana
+## Gaussian Cuadrature
 
-El problema a resolver será resolver la siguiente integral:
+The problem to solve for this exercise will be the next integer:
 
 
 $$
