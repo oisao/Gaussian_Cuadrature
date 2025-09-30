@@ -1,4 +1,6 @@
-# Tutorial: Gaussian Quadrature with Legendre
+# Tutorial:
+
+Gaussian Cuadrature with Legendre
 In this example we compute
 
 $$

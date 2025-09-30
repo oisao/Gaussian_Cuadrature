@@ -20,7 +20,7 @@
     
     
       
-        <title>Tutorials - Gaussian Cuadratures</title>
+        <title>Tutorial: Gaussian Quadrature with Legendre - Gaussian Cuadratures</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#function-to-compute-gausslegendre-nodes-and-weights" class="md-skip">
+        <a href="#tutorial-gaussian-quadrature-with-legendre" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tutorials
+              Tutorial: Gaussian Quadrature with Legendre
             
           </span>
         </div>
@@ -214,7 +214,7 @@
   
   
   <span class="md-ellipsis">
-    Tutorials
+    Tutorial: Gaussian Quadrature with Legendre
     
   </span>
   
@@ -281,28 +281,33 @@
 
 
 
-<p>In this example we compute
-$$
-I=\int_{1}^{3}(x^6 - x^2\sin(2x))dx
-$$
-using Gaussian quadrature with Legendre polynomials.</p>
-<p>import numpy as np</p>
-<h1 id="function-to-compute-gausslegendre-nodes-and-weights">Function to compute Gauss–Legendre nodes and weights</h1>
-<p>def gaussxw(N):
+<h1 id="tutorial-gaussian-quadrature-with-legendre">Tutorial: Gaussian Quadrature with Legendre</h1>
+<p>In this example we compute</p>
+<div class="arithmatex">\[
+I=\int_{1}^{3}\big(x^6 - x^2\sin(2x)\big)\,dx
+\]</div>
+<p>using Gaussian quadrature with Legendre polynomials.</p>
+<pre><code class="language-python">import numpy as np
+
+# Function to compute Gauss–Legendre nodes and weights
+def gaussxw(N):
     x, w = np.polynomial.legendre.leggauss(N)
-    return x, w</p>
-<h1 id="function-to-scale-nodes-and-weights">Function to scale nodes and weights</h1>
-<p>def gaussxwab(a, b, x, w):
-    return 0.5<em>(b - a)</em>x + 0.5<em>(b + a), 0.5</em>(b - a)*w</p>
-<h1 id="function-to-integrate">Function to integrate</h1>
-<p>def fInt(x):
-    return (x<strong>6) - (x</strong>2 * np.sin(2*x))</p>
-<h1 id="example-compute-with-n4">Example: compute with N=4</h1>
-<p>x4, w4 = gaussxw(4)
+    return x, w
+
+# Function to scale nodes and weights
+def gaussxwab(a, b, x, w):
+    return 0.5*(b - a)*x + 0.5*(b + a), 0.5*(b - a)*w
+
+# Function to integrate
+def fInt(x):
+    return (x**6) - (x**2 * np.sin(2*x))
+
+# Example: compute with N=4
+x4, w4 = gaussxw(4)
 x4Esc, w4Esc = gaussxwab(1.0, 3.0, x4, w4)
 I4 = np.sum(w4Esc * fInt(x4Esc))
-print("Result with N=4:", I4)
-```</p>
+print(&quot;Result with N=4:&quot;, I4)
+</code></pre>
 
 
 
