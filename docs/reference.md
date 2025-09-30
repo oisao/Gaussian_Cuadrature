@@ -1,51 +1,11 @@
-def gaussxw(N):
-    """Assignment of the sampling points and weights.
+# API Reference
 
-    Examples:
-        >>> gaussxw(N)
-        7.0
+## gaussxw
+::: cuadrature.gaussxw
 
-    Args:
-        a (float): First argument
-        b (float): Second argument
+## gaussxwab
+::: cuadrature.gaussxwab
 
-    Returns:
-        float: Returns the sum operation of `a` and `b`.
+## fInt
+::: cuadrature.fInt
 
-    """
-    return a + b
-
-
-def sum(a, b):
-    """Sum of two floats.
-
-    Examples:
-        >>> sum(3.0, 4.0)
-        7.0
-
-    Args:
-        a (float): First argument
-        b (float): Second argument
-
-    Returns:
-        float: Returns the sum operation of `a` and `b`.
-
-    """
-    return a + b
-
-def sum(a, b):
-    """Sum of two floats.
-
-    Examples:
-        >>> sum(3.0, 4.0)
-        7.0
-
-    Args:
-        a (float): First argument
-        b (float): Second argument
-
-    Returns:
-        float: Returns the sum operation of `a` and `b`.
-
-    """
-    return a + b
