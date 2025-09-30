@@ -1,10 +1,13 @@
+# Tutorial: Gaussian Quadrature with Legendre
 In this example we compute
+
 $$
-I=\int_{1}^{3}(x^6 - x^2\sin(2x))dx
+I=\int_{1}^{3}\big(x^6 - x^2\sin(2x)\big)\,dx
 $$
+
 using Gaussian quadrature with Legendre polynomials.
 
-
+```python
 import numpy as np
 
 # Function to compute Gauss–Legendre nodes and weights
@@ -26,3 +29,4 @@ x4Esc, w4Esc = gaussxwab(1.0, 3.0, x4, w4)
 I4 = np.sum(w4Esc * fInt(x4Esc))
 print("Result with N=4:", I4)
 ```
+
